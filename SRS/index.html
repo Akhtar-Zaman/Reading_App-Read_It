@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+	<title>SRS Copy | CSE327</title>
+
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- .cd-main-header -->
+
+	<main class="cd-main-content">
+
+		<!-- Content Body Starts Here -->
+		<div class="content-wrapper">
+
+			<!-- Place for Cover -->
+			<section id="cover">
+				<div align="center">
+					<h1>Software Requirements Specification</h1>
+					for<br>
+					<h2>Read It</h2>
+					Version 1.1 </br></br>
+					Prepared by</br></br>
+					Akhtaruzzaman Khan ID: 1611319042</br></br>
+					Amzad Hossain Rafi &nbsp&nbspID: 1530520642<br><br>
+					Md. Mekayel Hosen  &nbsp&nbsp&nbspID: 1620879042 <br><br>
+					Ishtiak Ahmed   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp ID: 153 0494 042
+
+				</div>
+			</section>
+			<!-- Table of Contents -->
+			<section id="toc">
+				<h1>Table of Contents</h1>
+				<div id="toc_container">
+
+					<ul class="toc_list">
+						<li>
+							<a href="#cover">Cover</a>
+						</li>
+						<li>
+							<a href="#toc">Table of Contents</a>
+						</li>
+						<li>
+							<a href="#revHis">Revision History</a>
+						</li>
+
+
+						<li>
+							<a href="#intro">1. Introduction</a>
+
+							<ul>
+								<li><a href="#purpose">1.1 Purpose</a></li>
+								<li><a href="#gartner">1.2 Business Case and Relevance to Gartner’s Prediction.</a></li>
+								<li><a href="#conventions">1.3 Document Conventions.</a></li>
+								<li><a href="#audience">1.4 Intended Audience and Reading Suggestions.</a></li>
+								<li><a href="#scope">1.5 Product Scope</a></li>
+								<li><a href="#reference">1.6 References</a></li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#overall_des">2. Overall Description</a>
+
+							<ul>
+								<li><a href="#prod_perspective">2.1 Product Perspective</a></li>
+								<li><a href="#prod_functions">2.2 Product Functions</a></li>
+								<li><a href="#user_class">2.3 User Classes and Characteristics</a></li>
+								<li><a href="#operating_env">2.4 Operating Environment</a></li>
+								<li><a href="#design_constraints">2.5 Design and Implementation Constraints</a></li>
+								<li><a href="#user_documentation">2.6 User Documentation</a></li>
+								<li><a href="#dependencies">2.7 Assumptions and Dependencies</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#external_req">3. External Interface Requirements</a>
+
+							<ul>
+								<li><a href="#user_interface">3.1 User Interfaces</a></li>
+								<li><a href="#hardware_interface">3.2 Hardware Interfaces</a></li>
+								<li><a href="#software_interface">3.3 Software Interfaces</a></li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#system_feat">4. System Features</a>
+
+							<ul>
+								<li><a href="#main_use_case">4.1 Use Case</a>
+									<ul>
+										<li class="bookmarks"><a href="#0">Test</a></li>
+									</ul>
+								</li>
+
+								<li><a href="#Expanded_Use_Case">4.2 Expanded Use Case </a></li>
+								<li><a href="#Use_Case">4.3 Use Case</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#nonfunc_req">5. Other Nonfunctional Requirements</a>
+
+							<ul>
+								<li><a href="#performance_req">5.1 Performance Requirements</a></li>
+								<li><a href="#safety_req">5.2 Safety Requirements</a></li>
+								<li><a href="#security_req">5.3 Security Requirements</a></li>
+								<li><a href="#software_q_att">5.4 Software Quality Attributes</a></li>
+								<li><a href="#business_rules">5.5 Business Rules</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#other_req">6. Other Requirements</a>
+
+							<ul>
+								<li><a href="#0">All Data</a></li>
+								<li><a href="#0">Category 1</a></li>
+								<li><a href="#0">Category 2</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#glossary">Appendix A: Glossary</a>
+						</li>
+						<li>
+							<a href="#analysis_models">Appendix B: Analysis Models</a>
+						</li>
+						<li>
+							<a href="#tbd_list">Appendix C: To be determined List</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Revision History -->
+			<section id="revHis">
+				<h1>Revision History Table</h1>
+				<p>Read It version 1.1</p>
+
+			</section>
+
+			<!-- Introduction -->
+			<section id="intro">
+				<h1>1. Introduction</h1>
+				<section id="purpose">
+					<h2>1.1 Purpose</h2>
+				</section>
+				<p>The purpose of this software requirement specification(SRS) is to give an overall idea of what “Glare
+					Trail” is about. The mentioned product is an application which takes power of the world wide web to
+					provide an interactive reading environment for students. Moreover, for teachers, it will allow quick
+					assignment dispersal as well as generate a report based on the time spent by students in individual
+					sections of the assignments. This will allow the teacher to create interesting sections based on
+					student preferences. The application will implement an AI based vision tracking system. For
+					students, the application will provide reading mode with customizable environment for a
+					comfortable reading experience.</p>
+
+
+				<section id="gartner">
+					<h2>1.2 Business Case and Relevance to Gartner’s Prediction</h2>
+				</section>
+				<p>According to Gartner’s Top Strategic Predictions for 2018 and Beyond, artificial intelligence can
+					successfully categorize images as well as humans at a fast rate. Our app will take advantage of this
+					and utilize it to create the aforementioned eye-ball tracking mechanism.</p>
+
+
+				<section id="conventions">
+					<h2>1.3 Document Conventions</h2>
+				</section>
+				<p>The document currently in view is in accordance with IEEE SRS writing convention. Important quotes
+					and (or) notations are highlighted by BLUE color and the font used is Arial.</p>
+
+
+				<section id="audience">
+					<h2>1.4 Intended Audience and Reading Suggestions</h2>
+				</section>
+				<p>This document is created with the intention of fulfilling the following criteria:</br></br></p>
+				<ul class="custm">
+					<li> For team’s use (including all members along with the project manager)</li>
+					<li> For marketing people in order to bring in potential clients</li>
+					<li> For log-keepers to smoothen updating process</li>
+					<li> For developers to help in impending updates and modifications</li>
+					<li> For testers to ensure standard debugging methods</li>
+				</ul>
+
+
+				<section id="scope">
+					<h2>1.5 Product Scope</h2>
+				</section>
+				<ul class="custm">
+					<li> The app will provide the parties involved to get a hassle-free solution.</li>
+					<li> The faculties will be able to disperse their assignments to the intended students easily.</li>
+					<li> The students will be able to view the assignments at their own pace and in their own customized way.</li>
+					<li> The user-experience/user-interface(UX/UI) will be clean, plain and smooth besides being intuitive.</li>
+					<li> The design of the website will be following RWD (Responsive Web Design) with adaptive display size
+						facility.</li>
+					<li> IAM (Identity and Access Management) will enable users to login with their social accounts.</li>
+					<li> Deployment for multi-platform will allow users to use it on their favorite electronic gadgets.</li>
+				</ul>
+
+
+				<section id="reference">
+					<h2>1.6 References</h2>
+				</section>
+				<p>The reference of IEEE SRS documentation was taken as format in creation of this document.</p>
+
+
+			</section>
+
+
+
+
+
+
+			<!-- Overall Description -->
+			<section id="overall_des">
+				<h1>2. Overall Description</h1>
+				<section id="prod_perspective">
+					<h2>2.1 Product Perspective</h2>
+					<p>There will be user friendly smartphone application
+						and web application for the students. Student will
+						get their reading tasks from their respectable teachers.
+						This application will track how much tasks is being
+						completed by the students and this report will be
+						sent to their respective teachers along with their
+						identification by selfie image of the students.
+						The teacher web application will show the tasks
+						report of every individuals</p>
+				</section>
+
+				<section id="prod_functions">
+					<h2>2.2 Product Functions</h2>
+					<p>By using this “Read It” students can view their
+						reading list and the appointed tasks. For the teacher
+						members it has adding class, students and reading materials
+						and in reading material it can be sent to the students
+						individually or to the whole class.</br></br></p>
+
+					<img src="img/functional.png" alt="functional" height=100% width=100%>
+
+				</section>
+
+				<section id="user_class">
+					<h2>2.3 User Classes and Characteristics</h2>
+					<table class="dyn">
+						<tr>
+							<th>Class</th>
+							<th>Characteristics</th>
+						</tr>
+						<tr>
+							<td>System Administrator</td>
+							<td>Can login to create and delete users,
+								assign role and modify class list, student
+								list, rendered document and reading analytics.</td>
+						</tr>
+						<tr>
+							<td>Teachers</td>
+							<td>Teacher will register, login, manage classes
+								and mange assignment and view student’s information.</td>
+						</tr>
+						<tr>
+							<td>Students</td>
+							<td>Students will register, login, view reading list
+								and can choose which to read. Students will give
+								permission of their smartphone’s resources.</td>
+						</tr>
+					</table>
+				</section>
+
+				<section id="operating_env">
+					<h2>2.4 Operating Environment</h2>
+					<ul>
+						<li>The both teacher and student website will run on most of the common browsers like Google Chome, Firefox,
+							Edge.</li>
+						<li>there will be an android app only for the students.</li>
+					</ul>
+				</section>
+
+				<section id="design_constraints">
+					<h2>2.5 Design and Implementation Constraints</h2>
+				</section>
+				<p>
+					<ul>
+						<li>Product must be ready for delivery by deadline</li>
+						<li>This document must be followed srictly by the designers and developers</li>
+					</ul>
+				</p>
+
+				<section id="user_documentation">
+					<h2>2.6 User Documentation</h2>
+					<ul>
+						<li>User will get this documentation with the application</li>
+						<li>There will be customer support through email</li>
+					</ul>
+				</section>
+
+				<section id="dependencies">
+					<h2>2.7 Assumptions and Dependencies</h2>
+					<ul>
+						<li>User has to connect to internet to upload reading information</li>
+						<li>Server must be always active</li>
+					</ul>
+				</section>
+
+			</section>
+
+			<!-- External Interface Requirements -->
+			<section id="external_req">
+				<h1>3. External Interface Requirements</h1>
+				<section id="user_interface">
+					<h2>3.1 User Interfaces</h2>
+					<section class='arrange'>
+						<h2>3.1.1 Webpage: Homepage </h2>
+						<div class="center-image">
+							<img src="img/external1.png" height=75% width=75%>
+						</div>
+					</section>
+					<section class='arrange'>
+						<h2>3.1.2 Webpage: Teacher's Dashboard </h2>
+						<div class="center-image">
+							<img src="img/external2.png" height=75% width=75%>
+						</div>
+					</section>
+					<section class='arrange'>
+						<h2>3.1.3 Webpage: Student's Dashboard </h2>
+						<div class="center-image">
+							<img src="img/external3.png" height=75% width=75%>
+						</div>
+					</section>
+				</section>
+
+				<section id="hardware_interface">
+					<h2>3.2 Hardware Interfaces</h2>
+					<p class='arrange'>
+						<ul class='arrange'>
+							<li>
+								Screen offers intuitive information about products.
+							</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="software_interface">
+					<h2>3.3 Software Interfaces</h2>
+
+					<p class='arrange'>
+						<ul class='arrange'>
+							<li>
+								Browser with HTML5 support will allow great user experience.
+							</li>
+							<li>
+								CSS will support responsive website.
+							</li>
+							<li>
+								JavaScript support will ensure an interactive user experience.
+							</li>
+						</ul>
+					</p>
+				</section>
+
+			</section>
+			<!--End of External Interface Requirements-->
+
+
+
+
+
+
+			<!-- System Features -->
+			<section id="system_feat">
+				<h1>4. System Features</h1>
+				<section id="main_use_case">
+					<h2>4.1 Use Cases</h2>
+					<div class="center-image">
+						<img src="img/use_case.png" height=90% width=90%>
+					</div>
+
+
+				</section>
+				<section id="Expanded_Use_Case">
+					<h2>4.2 Expanded Use Case</h2>
+					</br>
+
+					<h3> Use Case (Register)</h3></br>
+					<p>Register</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Register</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>User(Student, Teacher)</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical course of events: </p></br>
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>1) User requests for registration page.</td>
+							<td>2) System will generate the page.</td>
+						</tr>
+						<tr>
+							<td>3) User will fill the required fields (Name, email, contact number, password).</td>
+							<td>4) System will check whether the fields are correctly filled or not.</td>
+						</tr>
+						<tr>
+							<td>5) User will be registered for the application.</td>
+							<td>6) System will redirect user to the login page.</td>
+						</tr>
+					</table>
+					</br>
+					</br>
+					<p>Exception:</P>
+					</br>
+					<p>1)The user fill unformatted information.</br>2)Server is down so form did not reach to database server.</p>
+					</br>
+
+					<h3> Use Case (Register Verification)</h3></br>
+					<p> Register Verification</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Register Verification</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>System</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical course of events: </p></br>
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1) System will verify each required field is filled by user & there does not exist a duplicate user.
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>2)System will verify that the data entered mathces the validation rules.</td>
+						</tr>
+					</table>
+					</br>
+					</br>
+					<p>Exception:</P>
+					</br>
+					<p>1) The user was unable to register duo to not being able to connect to server.</p>
+					</br>
+
+					<h3> Use Case (Login)</h3></br>
+					<p> Login</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Login</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Registered User(Student, Teacher, Admin)</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical course of events: </p></br>
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>1) User will request for sign in page.</td>
+							<td>2) System will generate the page.</td>
+						</tr>
+						<tr>
+							<td>3) User will fill the required fields(email and password).</td>
+							<td>4) System will check whether the fields are correctly filled or not.</td>
+						</tr>
+						<tr>
+							<td>5) User will be logged into the website.</td>
+							<td></td>
+						</tr>
+					</table>
+					</br>
+					</br>
+					<p>Exception:</P>
+					</br>
+					<p>1) the user will unformatted information. </br> 2) Server is down so form did not reach to database server.
+					</p>
+					</br>
+
+					<h3> Use Case (Logout)</h3></br>
+					<p> Logout</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Logout</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Registered User(Student, Teacher, Admin)</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical course of events: </p></br>
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>1) User will request for logout by pressing logout button.</td>
+							<td>2) System will generate the login page.</td>
+						</tr>
+
+					</table>
+					</br>
+					</br>
+					<p>Exception:</P>
+					</br>
+					<p>1) Server is down so system can not redirect login page.</br> 2) If there is no internet connection user
+						can not logout successfully.</p>
+					</br>
+
+
+					<h3> Use Case (Login Verification)</h3></br>
+					<p>Login Verification </p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Login Verification</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>System</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical course of events:</p>
+					</br>
+					<table class="dyn">
+						<tr>
+							<th>Actor Actions</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td>1) System will verify user input data against stored data in database for authorization.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>2)System will output message based on the success of the authorization process.</td>
+						</tr>
+					</table>
+					<p>Exception:</p>
+					</br>
+					<p>1) the user was unsuccessful to login due to login data mismatch with server.</br>
+						</br>2) The user was unable to login due to not being able to connect to server.</p>
+					</br>
+
+					<h3> Use Case (Class Management)</h3></br>
+					<p>Class Management</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Class Management</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the class management button</td>
+							<td>System will respond by showing a drop-down list </td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>System will show other options under Class management</td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Class list)</h3></br>
+					<p>Class list</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Class list</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the class list button from the drop down menu</td>
+							<td>System will respond by showing all the classes he/she takes </td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Student list)</h3></br>
+					<p>Student list</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Student list</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the students list button from the drop down menu</td>
+							<td>System will respond by showing all the students who enroll classes he/she takes </td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Assignment Management)</h3></br>
+					<p>Assignment Management</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Assignment Management</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the Assignment management button</td>
+							<td>System will respond by showing a drop-down list </td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>System will show other options under Assignment management</td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Upload Assignment)</h3></br>
+					<p>Upload Assignment </p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Upload Assignment</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the upload assignment button from the drop down menu</td>
+							<td>System will respond by showing a upload option where teacher can upload the reading materials </td>
+						</tr>
+					</table>
+					</br>
+					<p>Exception:</br>1) If the internet will goes down, system will redirect the same page.</p>
+					</br>
+
+					<h3> Use Case (Assignment list)</h3></br>
+					<p>Assignment list</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Assignment list</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the assignment list button from the drop down menu</td>
+							<td>System will respond by showing a list of uploaded material. </td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Analytics)</h3></br>
+					<p>Analytics</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Analytics</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the Analytics button</td>
+							<td>System will respond by showing a drop-down list </td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>System will show other options under Analytics</td>
+						</tr>
+					</table>
+					</br>
+
+
+					<h3> Use Case (Reading Analytics)</h3></br>
+					<p>Reading Analytics</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Reading Analytics</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the reading analytics button from the drop down menu.</td>
+							<td>System will respond by generating a report based on reading materials.</td>
+						</tr>
+					</table>
+					</br>
+
+
+
+					<h3> Use Case (Eyeball analysis)</h3></br>
+					<p>Eyeball analysis</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Eyeball analysis</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the eyeball analysis button from the drop down menu.</td>
+							<td>System will respond by generating a report based on studen's eyeball movement whether student focuses
+								on reading material or not.</td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Processed Picture)</h3></br>
+					<p>Processed Picture</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Processed picture</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Teacher</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Teacher will click on the processed picture button from the drop down menu.</td>
+							<td>System will respond by generating a relay of pictures(face without background).</td>
+						</tr>
+					</table>
+					</br>
+					<!--End of Analytics -->
+
+					<h3> Use Case (Read)</h3></br>
+					<p>Read</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Read</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Student</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+
+					<table class="dyn">
+
+
+
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Student will read their material thorugh it</td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Embeded reader)</h3></br>
+					<p>Embeded reader</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Embeded reader</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>System</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td>When student selects read, system will generate embeded reader environment with default settings.
+							</td>
+						</tr>
+					</table>
+					</br>
+
+					<h3> Use Case (Access Control)</h3></br>
+					<p>Access Control</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Access Control</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>Student</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td>Student will click the access control button</td>
+							<td> System will show a sub menu</td>
+						</tr>
+					</table>
+					</br>
+					<p>Exception: </br> 1) If the user is not connected via wifi, system will ask for permission to use mobile
+						data</p>
+					</br>
+
+					<h3> Use Case (Camera Access)</h3></br>
+					<p>Camera Access</p></br>
+					<table class="simp">
+						<tr>
+							<th>Name</th>
+							<th>Camera Access</th>
+						</tr>
+						<tr>
+							<td>Actors</td>
+							<td>System</td>
+						</tr>
+						<tr>
+							<td>Type</td>
+							<td>Primary</td>
+						</tr>
+					</table>
+					</br>
+					<p>Typical Course of events:</p>
+					</br>
+
+					<table class="dyn">
+						<tr>
+							<th>Actor Action</th>
+							<th>System Response</th>
+						</tr>
+						<tr>
+							<td></td>
+							<td>System will prompt student for permission to access webcam or mobile cam(front)</td>
+						</tr>
+					</table>
+					</br>
+				</section>
+				<h3> Use Case (Create user)</h3></br>
+				<p>Create user</p></br>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Create usert</th>
+					</tr>
+					<tr>
+						<td>Actors</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<td>Type</td>
+						<td>Primary</td>
+					</tr>
+				</table>
+				</br>
+				<p>Typical Course of events:</p>
+				</br>
+
+				<table>
+					<tr>
+						<th>Actor Action</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin will enter user information of the new user</td>
+						<td>System will check if the user exists </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>System will create the user profile</td>
+					</tr>
+				</table>
+				</br>
+				<p>Exception:</P>
+				</br>
+				<p>1) User information error </br>
+					2) User information conflict due to existing user</p>
+				</br>
+
+				<h3> Use Case (Delete user)</h3></br>
+				<p>Delete user</p></br>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Delete User</th>
+					</tr>
+					<tr>
+						<td>Actors</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<td>Type</td>
+						<td>Primary</td>
+					</tr>
+				</table>
+				</br>
+				<p>Typical Course of events:</p>
+				</br>
+
+				<table>
+					<tr>
+						<th>Actor Action</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin will choose which user to delete</td>
+						<td>System will prompt admin wheather the admin is sure of the action </td>
+					</tr>
+					<tr>
+						<td>Admin will choose yes</td>
+						<td>System will delete the user profile</td>
+					</tr>
+				</table>
+				</br>
+				<p>Exception:</P>
+				</br>
+				<p>1) Admin will select no </br>
+					2) System will redirect to the delete screen</p>
+				</br>
+
+				<h3> Use Case (Assign Role)</h3></br>
+				<p>Assign Role</p></br>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Create usert</th>
+					</tr>
+					<tr>
+						<td>Actors</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<td>Type</td>
+						<td>Primary</td>
+					</tr>
+				</table>
+				</br>
+				<p>Typical Course of events:</p>
+				</br>
+
+				<table>
+					<tr>
+						<th>Actor Action</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin will click assign role button</td>
+						<td>System will show role options </td>
+					</tr>
+					<tr>
+						<td>Admin will choose one role for the user</td>
+						<td>System will assign the role to that user</td>
+					</tr>
+				</table>
+				</br>
+
+
+				<h3> Use Case (Modify)</h3></br>
+				<p>Modify</p></br>
+				<table>
+					<tr>
+						<th>Name</th>
+						<th>Modify</th>
+					</tr>
+					<tr>
+						<td>Actors</td>
+						<td>Admin</td>
+					</tr>
+					<tr>
+						<td>Type</td>
+						<td>Primary</td>
+					</tr>
+				</table>
+				</br>
+				<p>Typical Course of events:</p>
+				</br>
+
+				<table>
+					<tr>
+						<th>Actor Action</th>
+						<th>System Response</th>
+					</tr>
+					<tr>
+						<td>Admin will choose modify</td>
+						<td>System will asked the admin what to modify </td>
+					</tr>
+					<tr>
+						<td>Admin will choose which to modify</td>
+						<td>System will asked for the information</td>
+					</tr>
+					<tr>
+						<td>Admin will enter the new information</td>
+						<td>System will modify the information</td>
+					</tr>
+					<tr>
+						<td>Admin will choose save</td>
+						<td>System will modify the information</td>
+					</tr>
+				</table>
+				</br>
+
+
+			</section>
+			<!--End of System Features -->
+
+
+			<!-- Other Nonfunctional Req -->
+			<section id="nonfunc_req">
+				<h1>5. Other Nonfunctional Requirements</h1>
+				<section id="performance_req">
+					<h2>5.1 Performance Requirements</h2>
+					<p>
+						<ul>
+							<li>User must login with Federated ID Provider.</li>
+							<li>Document has to be sent less than few seconds.</li>
+							<li>When teachars asked for the student report it has to be auto-generated in few seconds.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="safety_req">
+					<h2>5.2 Safety Requirements</h2>
+					<p>
+						<ul>
+							<li>Smartphone application and website must follow proper
+								security protocol like SSL, TLS and robust encryption
+								like AES-256, Sha-512.</li>
+							<li>We will remove the background of the images prior to generating report for the teachers, respecting
+								the privacy of students.</li>
+							<li>Our architecture does not support the raw image (with background) to be stored in the server.</li>
+
+						</ul>
+					</p>
+				</section>
+
+				<section id="security_req">
+					<h2>5.3 Security Requirements</h2>
+					<p>
+						<ul>
+							<li>Website and smartphone application must create session a properly.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="software_q_att">
+					<h2>5.4 Software Quality Attributes</h2>
+					<p>
+						<ul>
+							<li>User friendly interface.</li>
+							<li>Students can change reading environment.</li>
+							<li>How much is being read will be can calculated based on eye tracking data.</li>
+							<li>User will be able to manage assignments and classes.</li>
+						</ul>
+					</p>
+				</section>
+
+				<section id="business_rules">
+					<h2>5.5 Business Rules</h2>
+					<p>
+						<ul>
+							<li>Users must have the email account of their respective organization.</li>
+							<li>Students must be able to select what file to read.</li>
+							<li>Teachars going to be able to mange classes and assignments.</li>
+						</ul>
+					</p>
+				</section>
+
+			</section>
+			<!-- Other Requirements -->
+			<section id="other_req">
+				<h1>6. Other Requirements</h1>
+			</section>
+			<!-- Appendix A: Glossary-->
+			<section id="glossary">
+				<h2>Appendix A: Glossary</h2>
+				<table class="dyn">
+					<tr>
+						<th>Terms</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>Project_Name</td>
+						<td>The name of our project with simplism and minimalism in foresight.</td>
+					</tr>
+					<tr>
+						<td>SRS</td>
+						<td>Software Requirement Specification.</td>
+					</tr>
+					<tr>
+						<td>IEEE</td>
+						<td>Institue of Electrical and Electronics Engineers.</td>
+					</tr>
+					<tr>
+						<td>Internet Protocol</td>
+						<td>A set of rules governing the format of data sent over the Internet or other network.</td>
+					</tr>
+					<tr>
+						<td>SHA-512</td>
+						<td>Secure Hash Algorithm with 512 bit encryption</td>
+					</tr>
+					<tr>
+						<td>Encryption</td>
+						<td>The process of encoding a message or information in such a way that only authorized parties can access
+							it and those who are not authorized cannot.</td>
+					</tr>
+					<tr>
+						<td>AES-256</td>
+						<td>Advanced Encryption Standard with 256 bit encryption.</td>
+					</tr>
+					<tr>
+						<td>SSL</td>
+						<td>Secure Sockets Layer is a standard security protocol for establishing encrypted links between a web
+							server and a browser in an online communication.</td>
+					</tr>
+
+
+				</table>
+			</section>
+			<!-- Analysis Models -->
+			<section id="analysis_models">
+
+			</section>
+			<!-- To be Determined List -->
+			<section id="tbd_list">
+
+			</section>
+
+
+
+
+		</div> <!-- .content-wrapper -->
+	</main> <!-- .cd-main-content -->
+
+
+</body>
+
+</html>
