@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Software Design Specification</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Icons -->
+	<link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+
+<body>
+
+	<div id="wrapper">
+        
+		<h1>
+			<center><strong>  Software Design Specification </strong></center><br><br>
+		</h1>
+		
+        <div id="menu">
+                
+                    <a href="#1">1. Architectural Design</a><br>
+                	<a href="#2">2. Component Design</a><br>
+                	<a href="#3">3. Class Diagram</a><br>
+                	<a href="#4">4. Class Description</a><br>
+                	<a href="#5">5. Database Design</a><br>
+                	<a href="#6">6. API Listing & Details</a><br>          
+                	<a href="#7">7. Sequence Diagram</a><br>
+                	<a href="#8">8. Development(Work) Plan</a><br>
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+
+						<br />
+						<h2 id="1">1. Architectural Design</h2>
+						<img src="archi.jpg">
+
+						<br />
+						<section id="2">
+							<h2 >2. Component Design</h2>
+							<h4 class="comalign"> 2.1 Components Overview </h4>
+								<p class="comalign">
+								  We will be giving a basic overview of the various components to be used in our system.
+								</p>
+							<h4 class="comalign"> 2.2 Database </h4>
+							<p class="comalign"> SqLite will be used as our database software for Hand held software application and PostgreSQL will be used for our web applications. To represent various data from our project, we will be using tables included within the database software. </p>
+
+							</p>
+							<h4 class="comalign"> 2.3 Server Software </h4>
+							<p class="comalign">
+
+								Through our server software, we will be able to directly manipulate the contents of our database system based on commands provided from the server procedure proxy.
+
+							</p>
+
+							<h4 class="comalign"> 2.4 Server procedure proxy </h4>
+							<p class="comalign">
+								we will be provided an interface for us to request information or submit updates to the server through the server procedure proxy. The clients (Teacher) will be given limited access to the server so that they can update the contents._
+							</p>
+
+							<h4 class="comalign"> 2.4 Client Software </h4>
+							<p class="comalign">
+								The client software on which we will present our project will either be on a desktop computer or a hand held device. The software will have two general purposes so that the users can easily update information on the project. Our users will mainly consist of two variants, (Teacher and Student). So for this the software will mainly consist of two interface to accomodate the two different variants.
+
+								<ul>
+								<li>
+									<strong> Hand held Client Software </strong>
+									<br />
+									 The hand held client software will allow both type of users to view their varient of the software and they can also make changes and updates relevent to the inteface assign to them.
+								</li>
+
+								<br />
+
+								<li>
+									<strong> Desktop Client Software </strong>
+									<br />
+									 The Desktop client software will allow both type of users to view their varient of the software and they can also make changes and updates relevent to the inteface assign to them.
+								</li>
+
+								<br />
+
+							</ul>
+
+
+							</p>
+
+						</section>
+
+
+
+
+						<br />
+						<h2 id="3">3. Class Diagram</h2>
+						<p>
+							The image below is the High Level UML Diagram for our classes:
+							<br />
+							<img src="UML_Diagram.png" class="img-responsive"">
+						</p>
+
+						<br />
+						<h2 id="4">4. Class Description</h2>
+						<p>
+							In the previous section, we outlined the classes that will be used for this project. In this section, we will describe each of these classes, for better understanding.
+
+							<ul>
+								<li>
+									<strong> Teacher </strong>
+									<br />
+									 This class stores teacher information, which is one of the main user class of the application.They can create and upload reading assignments for students.
+								</li>
+							</ul>
+
+							<ul>
+								<li>
+									<strong> Student </strong>
+									<br />
+									This class stores the students information.
+								<br />
+								</li>
+							</ul>
+
+							<ul>
+								<li>
+									<strong> Dashboard </strong>
+									<br />
+									Used to store and generate report to the teacher.
+							  	<br />
+							 </li>
+						 </ul>
+
+						 <ul>
+							 <li>
+									<strong> Course </strong>
+									<br />
+									This class stores the course information like course-id, course name.
+									<br />
+							 </li>
+						 </ul>
+
+						 <ul>
+							 <li>
+								 <strong> To_read </strong>
+								 <br />
+								 To store which asssignment for which course with course-id, time etc in this class.
+							   <br />
+               </li>
+						 </ul>
+
+						 <ul>
+							 <li>
+									<strong> To_read_Student </strong>
+									<br />
+									this class stored student-id with course assignments and date.
+								  <br />
+								</li>
+						 </ul>
+
+						 <ul>
+							 <li>
+									<strong> Section </strong>
+									<br />
+									Used to store all the section of each courses.
+								  <br />
+								</li>
+						 </ul>
+
+						 <ul>
+							 <li>
+									<strong> Distribution_list </strong>
+									<br />
+									this class stored tracking assignments data.
+								  <br />
+								</li>
+						 </ul>
+
+						 <ul>
+							 <li>
+									<strong> Section_Student </strong>
+									<br />
+									To store which students are takes which section.
+								  <br />
+								</li>
+						 </ul>
+						</p>
+
+						<br />
+						<h2 id="5">5. Database Design</h2>
+						<p>
+							The image below shows various relationships between the entities of our database (ER Diagram)
+							<br />
+							<img src="ER_diagram.png" class="img-responsive" style="margin: auto;">
+						</p>
+
+						<br />
+						<h2 id="6">6. API Listing & Details</h2>
+						<ul>
+							<li>PyGaze for Iris Movement.</li>
+							<li>REST for client and server communication.</li>
+							<li>TensorFlow API for android application.</li>
+							<li>Custom APIs developed by us for inter-service connectivity</li>
+						</ul>
+
+						<h2 id="7">7. Sequence Diagram</h2>
+						<p>
+							The image below is the Sequence Diagram :
+							<br />
+							<img src="sequence_diagram.png" class="img-responsive" style="margin: auto;">
+						</p>
+
+						<br />
+						<h2 id="8">8. Development(Work) Plan</h2>
+						<ul>
+							<li>Amzad is the manager for mobile platform development. He will make decisions on the framework to be used and develop the mobile app.</li>
+							<li>Akhtar is the manager for image-processing issues and iris tracking. Akhtar is responsible for the face-recognition algorithms and background removal. </li>
+							<li>Meckayel is the front-end manager. He will be rresponsible for the UI design and the related works.</li>
+							<li>Istiaq is the API manager. He is responsible for dealing with the APIs and resolving all sorts of issues related with the connections between the different parts of the system.</li>
+							
+						</ul>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
