@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class Work</title>
+    <link rel="stylesheet" href="{% static 'css/pdfview.css' %}">
+</head>
+
+<body>
+
+    <h1><b><span class="yellow">Please Upload Your Class Work</span></b> </h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <!-- Upload the pdf file and Name-->
+        <form method="POST">
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>
+                        <h1>Name</h1>
+                    </th>
+                    <th>
+                        <h1>PDF Files</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ forms.name }}</td>
+                    <td>{{ forms.pdffile }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+       <center> <input type="submit" name="submit" value="upload" class="button"></center>
+        </form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Class Work</title>
+      <link rel="stylesheet" href="{% static 'css/pdfview.css' %}">
+</head>
+
+<body>
+
+  <h1><b><span class="yellow">Class Work</span></b> </h1>
+
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>Name</h1></th>
+			<th><h1>PDF Files</h1></th>
+			<th><h1>Clicks</h1></th>
+		</tr>
+	</thead>
+	<tbody>
+			{% for pdf in pdf %}
+		<tr>
+			<td>{{ pdf.name }}</td>
+
+			<!-- After Clicking Read Button PDF will be open -->
+			<td><a href="{{ pdf.pdffile.url }}"> <input type="button" class="button" value="Read"> </a></td>
+
+			<!-- After Clicking click Button PDF webcamera will take picture after 5 seconds -->
+			<td><input type="button" value="click" name="aa" class="button" onclick="location.href= {% url 'image' %}"></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+  
+  
+
+</body>
+
+</html>
