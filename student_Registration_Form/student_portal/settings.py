@@ -90,8 +90,8 @@ DATABASES = {
     }
 }
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '670598075845-eaes4no6sl3viui13nomdquusqd21alm.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '2OweSq0pzcgbQSmqLdBuiI00'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
